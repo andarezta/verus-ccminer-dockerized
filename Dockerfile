@@ -28,6 +28,5 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 COPY --from=builder /usr/local/bin/ccminer /usr/local/bin/
 COPY run.sh //usr/local/bin/
 RUN chmod +x /usr/local/bin/run.sh
-RUN chown miner:miner /usr/local/bin/run.sh
 
-ENTRYPOINT [ "/usr/local/bin/run.sh" ]
+ENTRYPOINT [ "run.sh" ]
