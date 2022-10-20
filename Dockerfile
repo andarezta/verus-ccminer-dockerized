@@ -26,6 +26,9 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY --from=builder /usr/local/bin/ccminer /usr/local/bin/
+COPY run.sh //usr/local/bin/
+RUN chmod +x /usr/local/bin/run.sh
+RUN chown miner:miner /usr/local/bin/run.sh
 
-ENTRYPOINT [ "ccminer" ]
-CMD [ "-a", "verus", "-o", "stratum+tcp://verushash.asia.mine.zergpool.com:3300", "-u", "DN5C7yLyMV5eSmVBtxPDA3ntfKGUZ9Wcpk.openwrt", "-p", "c=DOGE,mc=VRSC,ID=openwrt", "-t 3" ]
+ENTRYPOINT [ "run.sh" ]
+CMD [ "-a", "verus", "-o", "stratum+tcp://verushash.asia.mine.zergpool.com:3300", "-u", "DN5C7yLyMV5eSmVBtxPDA3ntfKGUZ9Wcpk.openwrt", "-p", "c=DOGE,mc=VRSC,ID=openwrt", "-t 2" ]
