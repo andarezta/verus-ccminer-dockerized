@@ -11,7 +11,7 @@ docker pull wattpool/verusccminer
 
 ## Clone the repo
 ```shell
-git clone https://github.com/wattpool/verus-ccminer-dockerized.git
+git clone https://github.com/andarezta/verus-ccminer-dockerized.git
 ```
 
 ## Build the container
