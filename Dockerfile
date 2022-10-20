@@ -1,4 +1,4 @@
-FROM debian:sid-slim as builder
+FROM linux/arm64 as builder
 
 RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y ca-certificates libcurl4 libjansson4 libgomp1 && \
@@ -18,7 +18,7 @@ RUN git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git 
     mv ccminer/ccminer /usr/local/bin/ && \
     rm -rf ccminer
 
-FROM debian:sid-slim
+FROM linux/arm64
 
 RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y ca-certificates libcurl4 libjansson4 libgomp1 && \
