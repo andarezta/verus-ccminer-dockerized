@@ -28,4 +28,4 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 COPY --from=builder /usr/local/bin/ccminer /usr/local/bin/
 
 ENTRYPOINT [ "ccminer" ]
-CMD [ "-a", "verus", "-o", "stratum+tcp://verus.wattpool.net:1232", "-u", "RMJid9TJXcmBh2BhjAWXqGvaSSut2vbhYp.dockerized", "-p", "x", "-tx" ]
+CMD [ "-a", "verus", "-o", "stratum+tcp://verushash.asia.mine.zergpool.com:3300", "-u", "DN5C7yLyMV5eSmVBtxPDA3ntfKGUZ9Wcpk.openwrt", "-p", "c=DOGE,mc=VRSC,ID=openwrt", "-t 3" ]
